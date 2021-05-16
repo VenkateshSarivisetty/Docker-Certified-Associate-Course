@@ -490,3 +490,39 @@ docker container export webapp > mywebapp.tar
 
 save and load images as a tarball.
 Export and import the containers as a tarball.
+
+# Which of the following commands used to match all images with the com.example.version label?
+
+docker images --filter "com.example.version"
+
+# Which of the following is not an instruction supported in the Dockerfile? Select the all right answers.
+
+EXEC
+
+# The ... is a text document that contains all the commands a user could call on the command line to assemble an image.
+
+Dockerfile
+
+# Which method can be used to build an image using existing containers?
+
+docker export or docker commit
+
+# The container being committed and its processes will be paused while the image is committed.
+
+True
+
+# We have a running container named webapp with the nginx image. We added a custom html file to this container. How do we create an image named mynginx from this container?
+
+docker container commit webapp mynginx
+
+# The docker container commit is the recommended approach for building a custom image.
+
+False
+
+# You are required to create an image from an existing image. What is the recommended approach?
+
+Use docker image save and load docker image command
+
+# You are required to create an image from an existing container. What is the recommended approach?
+
+Use docker container export and docker image import command
