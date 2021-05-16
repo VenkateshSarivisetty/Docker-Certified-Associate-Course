@@ -485,3 +485,8 @@ True
 # Export webapp container’s filesystem as a tar archive. Select the right answer
 
 docker container export webapp > mywebapp.tar
+
+# Steps to import/export image and container respectively
+
+save and load images as a tarball.
+Export and import the containers as a tarball.
