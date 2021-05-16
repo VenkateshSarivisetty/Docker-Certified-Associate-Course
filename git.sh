@@ -1,4 +1,4 @@
-git add .
+git add docker-commands.md
 git commit -m "docker-commands"
 git push -u origin main
 #git config user.name="venkatesh.sarivisetty015@gmail.com"
