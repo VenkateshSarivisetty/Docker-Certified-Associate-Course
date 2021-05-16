@@ -259,7 +259,7 @@ docker container run -it --name apps nginx
 
 # Which policy should be used to restart the container at all times except when it is stopped manually by a user?
 
-unless-stopped 
+unless-stopped
 
 # Which command should be used to update the restart policy of the httpd container with always?
 
@@ -472,7 +472,7 @@ pull docker images from the host with access to docker hub,convert to a tarball 
 
 # You have created a nginx container and customized it to create your own webpage. How can you create an image out of it to share with others?
 
-docker export 
+docker export
 
 # How do you restore an image created from the docker export command?
 
@@ -526,3 +526,61 @@ Use docker image save and load docker image command
 # You are required to create an image from an existing container. What is the recommended approach?
 
 Use docker container export and docker image import command
+
+# Whenever a build is initiated by running the Docker build command, the files under the build context are transferred to the Docker daemon, at a temporary directory under the docker’s filesystem. Which directory are these files stored in?
+
+/var/lib/docker/tmp
+
+# Which of the below commands may be used to build an image with the Dockerfile filename?
+
+docker build . or docker build -f dockerfile .
+
+# While building a docker image from code stored in a remote URL, which command will be used to build from a directory called docker in the branch dev?
+
+docker build https://github.com/kk/dca.git#dev:docker
+
+# A build’s context is the set of files located in the specified PATH or URL, Which kind of resources can the URL parameter refer to ?
+
+Git repositories/pre-packaged tarball contexts/path to a local directory
+
+# Choose the correct flag to apply a tag to an image done
+
+-t
+
+# If you do not specify a tag name, you can’t build the image
+
+False
+
+# Build an image using a context build under path /tmp/docker and name it webapp.
+
+docker build /tmp/docker -t webapp
+
+# What is the default tag if not specified when building an image with the name webapp?
+
+latest
+
+# What is the command to build an image using a Dockerfile.dev file under path /opt/myapp with the name webapp. The current directory you are in is /tmp.
+
+docker build -f /opt/myapp/Dockerfile.dev /opt/myapp -t webapp
+
+# What is the file used to exclude temporary files such as log files or builds from the context during a build?
+
+.dockerignore
+
+# If the build fails at a particular stage, it repurposes the previous layers from the cache and does not really rebuild them.
+
+True
+
+# What is a recommended approach for installing packages and libraries while building an image?
+
+Use the RUN instruction and have the apt-get update and apt-get install commands  on the same instructions
+
+# Using RUN apt-get update && apt-get install -y ensures your Dockerfile installs the latest package versions with no further coding or manual intervention. This technique is known as …..
+
+Build-Context
+
+# What is a best practice while installing multiple packages as part of the install instruction?
+
+Add them on seperate lines seperated by slash in alphanumeric order.
+
+# Which among the following scenarios will lead to docker invalidating cache on a given layer?
