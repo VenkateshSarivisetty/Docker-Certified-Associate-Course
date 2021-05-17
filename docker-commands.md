@@ -753,7 +753,26 @@ docker image save mysql -o mysql.tar
 # What is a best practice while installing multiple packages as part of the install instruction?
 
 Add them on seperate lines seperated by a slash in alphanumeric order
- 
+
+# Which of the below statements are true:
+
+By default a container runs with unlimited cpu and memory resources
+
+# What will happen if the --memory-swap is set to -1?
+
+the container allowed to use unlimited swap.
+
+# Each container gets a CPU share of .... assigned by default
+
+1024
+
+# What is a linux feature that prevents a process within the container to access raw sockets?
+
+Kernal capabilities
+
+# By default, all containers get the same share of CPU cycles. How to modify the shares?
+
+docker container run --cpu-shares=513 nginx 
 
 
 
