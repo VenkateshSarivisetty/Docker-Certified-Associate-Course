@@ -753,8 +753,7 @@ docker image save mysql -o mysql.tar
 # What is a best practice while installing multiple packages as part of the install instruction?
 
 Add them on seperate lines seperated by a slash in alphanumeric order
-
-# 
+ 
 
 
 
