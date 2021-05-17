@@ -584,3 +584,180 @@ Build-Context
 Add them on seperate lines seperated by slash in alphanumeric order.
 
 # Which among the following scenarios will lead to docker invalidating cache on a given layer?
+
+Chane in instruction/Change in a file with the ADD instruction
+
+# forces the build to install a particular version of package regardless of what’s in the cache. This technique can also reduce failures due to unanticipated changes in required packages.
+
+Version Pinning
+
+# What is a recommended approach to reduce build time while building docker images?
+
+Instuctions likely to change more often must be at the bottom of the Dockerfile.
+
+# A Dockerfile is built from the Ubuntu image as the base image. What would happen to the cache when a new version of the Ubuntu image is made available at Dockerhub?
+
+Cache is not validated and docker continues to use existing cache
+
+# Which option can be used to disable the cache while building a docker image? (Explore the docker documentation for this)
+
+--no-cache=true
+
+# COPY instruction only supports the basic copying of local files into the container
+
+True
+
+# What is the right instruction to download a file from "https://file.tar.xz" and auto-extract it into "/testdir" in the image?
+
+ADD https://file.tar.xz /testdir
+
+# COPY instruction has some features like local-only tar extraction and remote URL support.
+
+False
+
+# Which instruction(s) can be used in the Dockerfile to copy content from the local filesystem into the containers?
+
+COPY and ADD
+
+# Which of the following is the correct format for CMD instruction?
+
+CMD ["executable","param1","param2"] or CMD ["param1","param2"] or CMD command param1 param2
+
+# If CMD is used to provide default arguments for the ENTRYPOINT instruction, both the CMD and ENTRYPOINT instructions should be specified.
+
+True
+
+# When a user runs the command docker run my-custom-image sleep 1000
+
+docker overrides the CMD instruction with "sleep 1000"
+
+# Choose the correct instruction to add the echo "Hello World" command in the Dockerfile.
+
+CMD ["echo", "Hello World"]
+
+#  What is the output of the following Dockerfile snippet when container runs as docker run -it < image> ?
+ENTRYPOINT ["/bin/echo", "Hello"]
+CMD ["world"]
+
+Hello World
+
+# What is the output of the following Dockerfile snippet when container runs as docker run -it <image> kk ?
+ENTRYPOINT ["/bin/echo", "Hello"]
+CMD ["World"]
+
+Hello kk
+
+# If you list more than one CMD instruction in the Dockerfile then only the last CMD will take effect.
+
+True
+
+# A parent image is the image that your image is based on. It refers to the contents of the FROM directive in the Dockerfile.
+
+True
+
+# A parent image has FROM scratch in its Dockerfile.
+
+False
+
+# While building an image, You have one base image, but there could be multiple parent images.
+
+True
+
+# How do you identify if a Docker file is configured to use multi-stage builds?
+
+The Dockerfile has multiple FROM instructions
+
+# The "--from=0" in the following Dockerfile instruction line refers to:
+"COPY --from=0 /go/src/github.com/alexellis/href-counter/app ."
+
+The image built using the first set of instructions in the Dockerfile.
+
+# By default, the stages are not named, and you refer to them by their integer number, starting with 1 for the first FROM instruction in the multi-stage build.
+
+False
+
+# Name the stage which uses nginx as a base image to builder in the Dockerfile.
+
+From nginx AS builder
+
+# What is the instruction used to copy a file from an external image named redis not part of any stage in the multi-stage build process. (Refer to the documentation for this one)
+
+--from=redis
+
+# You are developing an e-commerce application. The application must store cart details of users temporarily as long as the user’s session is active. What is the recommended approach to storing the cart details with the application deployed as a docker container?
+
+Store the cart details in a volume backed by a in-memory cache service like redis
+
+# It’s recommended to avoid sending unwanted files to the build context by using .gitignore file to exclude those files.
+
+False
+
+# An application you are developing requires an httpd server as frontend, a python application as the backend API server, a MongoDB database and a worker developed in Python. What is the recommended approach in building images for these containers?
+
+Build seperate images for each component of the application.
+
+# Which of the below can help minimize the image size?
+
+only install necessary packages within the image/ Combine multiple dependent instructions into a single one and cleanup temporary files / Use multi-stage builds
+
+# Which is the recommended approach to install packages following the best practices in Dockerfile?
+
+Run apt-get update && apt-get install -y \
+    git \
+    httpd
+    
+# Which of the below steps can help minimize the build time of images?
+
+Avoid sending unwanted files to the build context using .dockerignore
+Move the instructions that are likely to change most frequently to the bottom of the Dockerfile.
+
+# Which of the following tag image will get when creating a redis container with image redis?
+docker run -itd --name redis redis
+
+# What is the command to change the tag of busybox:latest to busybox:v1?
+
+docker image tag busybox:latest busybox:v1
+
+# What is the command to list the images in Docker host?
+
+docker image ls
+
+# What is the command to remove all unused images on the Docker host?
+
+docker image prune -a
+
+# What is the command to build an image with the name webapp using a Dockerfile file under path /opt/myapp . The current directory you are in is /tmp.
+
+docker build -f /opt/myapp/Dockerfile /opt/myapp -t webapp
+
+# Which command is used to list the full length image IDs?
+
+docker image --no-trunc
+
+# Which command is used to download the redis image from Docker Hub?
+
+docker image pull redis
+
+# Which method can be used to build an image using existing containers?
+
+docker commit
+
+# You are required to generate a report of the total amount of space consumed by docker images, containers and build cache on a docker host. What would be your approach?
+
+Run the command docker system df
+
+# Which command can be used to get a backup of image mysql?
+
+docker image save mysql -o mysql.tar
+
+# What is a best practice while installing multiple packages as part of the install instruction?
+
+Add them on seperate lines seperated by a slash in alphanumeric order
+
+# 
+
+
+
+
+
+
