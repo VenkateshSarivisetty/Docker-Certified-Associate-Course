@@ -774,7 +774,63 @@ Kernal capabilities
 
 docker container run --cpu-shares=513 nginx 
 
+# Which command is used to list the default available networks?
 
+docker network ls
+
+# Which command is used to see the network settings and IP address assigned to a container with id c164825bb3d3 that uses the myapp image?
+
+docker inspect c164825bb3d3
+
+# What is the default network driver used on a container if you haven’t specified one?
+
+bridge
+
+# Overlay networks connect multiple Docker daemons together and enable swarm services to communicate with each other.
+
+True
+
+# f you use the …... network mode for a container, that container’s network stack is not isolated from the Docker host (the container shares the host’s networking namespace), and the container does not get its own IP-address allocated.
+
+host
+
+# How to get the subnet, gateway of the network c0a0b59a3807?
+
+docker network inspect c0a0b59a3807
+
+# Which of the following commands would create a user-defined bridge network called my-net?
+
+docker network create my-net / docker network create -d bridge my-net / docker network create --driver bridge my-net
+
+# What is the command to connect a running container with name myapp to the existing bridge network my-net?
+
+docker network connect my-net myapp
+
+# What is the command to remove all unused networks?
+
+docker network prune
+
+# What is the command to remove the my-net network?
+
+docker network rm my-net
+
+# Which of the following commands would create a user-defined bridge network called dev-net?
+
+docker network create dev-net / docker network create -d bridge dev-net / docker network create --driver bridge dev-net
+
+# What is the command to connect a running container with name myapp to the existing bridge network dev-net?
+
+docker network connect dev-net myapp
+
+# Which command is used to disconnect the my-net network from the redis container?
+
+docker network disconnect my-net redis
+
+# Which command is used to see the details of the subnet and gateway of network id ce982a9edf65?
+
+docker network inspect ce982a9edf65
+
+# 
 
 
 
