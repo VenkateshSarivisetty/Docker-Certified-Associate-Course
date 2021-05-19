@@ -900,6 +900,57 @@ docker volume -d --name appstore --mount source=vol1,target=/opt,readonly httpd
 
 True
 
+# Using ...... we can configure containers and communication between them in a declarative way.
+
+Docker-Compose
+
+# ....... is a YAML file which contains details about the services, networks, and volumes for setting up a Docker application.
+
+Docker Compose
+
+# Which command can be used to create and start containers in foreground using the existing docker-compose.yml?
+
+docker-compose up
+
+# Which command can be used to create and start containers in background or in detached mode in compose using the existing docker-compose.yml?
+
+docker-compose up -d
+
+# ...... is the command to list the containers created by compose file.
+
+docker-compose ps
+
+# ...... is the command to check the logs for the whole stack defined inside compose file.
+
+docker-compose logs
+
+# Which command can be used to stop (only and not delete) the whole stack of containers created by compose file?
+
+docker-compose stop
+
+# docker-compose stop command stops and removes the whole stack of container created by compose file.
+
+False
+
+# Select the right answer. Which command can be used to delete the application stack created using compose file?
+
+docker-compose down
+
+# Compose files that doesn't declare a version are considered “version 0”
+
+False
+
+# Compose files using the version 2 and version 3 syntax must indicate the version number at the root of the document.
+
+True
+
+# With the docker-compose up command, we can run containers on multiple docker hosts.
+
+False
+
+# 
+
+
 
 
 
