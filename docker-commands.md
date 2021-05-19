@@ -948,7 +948,55 @@ True
 
 False
 
-# 
+# The RAFT logs are stored in memory on the manager nodes.
+
+False
+
+# The RAFT logs are stored on disk and not protected.
+
+False
+
+# The default behaviour requires you to unlock the swarm when a new node joins the swarm cluster. 
+
+False
+
+# After restarting the docker service and trying to run docker service ls, you get an error "Error response from daemon: Swarm is encrypted and needs to be unlocked before it can be used. How can you solve this error?
+
+docker swarm unlock
+
+# Which command can be used to return the current key which is used inside the cluster ?
+
+docker swarm unlock-key
+
+# Which command can be used to enable auto lock on an existing swarm?
+
+docker swarm update --auto-lock=true
+
+# ... are one or more instances of a single application that runs across the Swarm Cluster.
+
+services
+
+# Which command can be used to run an instance on swarm?
+
+docker service create webapp
+
+# What is the command to run 3 instances of httpd on a swarm cluster?
+
+docker service create --replicas=3 httpd
+
+# What component is responsible for creating tasks in swarm?
+
+orchestrator
+
+# What component is responsible for instructing a worker to run a task?
+
+scheduler
+
+# The .... assigns tasks to nodes in swarm.
+
+dispatcher
+
+
 
 
 
